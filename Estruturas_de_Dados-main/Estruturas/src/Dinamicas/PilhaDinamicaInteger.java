@@ -11,13 +11,16 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
     //Métodos da interface
 
     @Override
-    public void inserirElemento(Object elemento) {
-        //Gabriel
-    }
-
-    @Override
-    public void inserirSequencia(Object elementos) {
-        //Gabriel
+    public void inserirSequencia(PilhaDinamicaInteger pilhaDinamicaInteger2) {
+        NoInteger aux=pilhaDinamicaInteger2.getPrimeiro();
+        if (pilhaDinamicaInteger2.estaVazia()){
+            System.out.println("Pilha vazia");
+        }else {
+            do {
+                inserirElemento(aux.getConteudo(), aux.getPeso());
+                aux = aux.getProximo();
+            } while (aux != null);
+        }
     }
 
     @Override
@@ -84,8 +87,15 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
     }
 
     @Override
-    public void editarElemento(Object elementoAntigo, Object elementoNovo) {
-        //Gabriel
+    public void editarElemento(Integer conteudoAntigo, Integer pesoAntigo,Integer conteudoNovo, Integer pesoNovo) {
+        NoInteger aux;
+        if (buscarElemento(conteudoAntigo,pesoAntigo)){
+            aux = puxarNo(conteudoAntigo, pesoAntigo);
+            aux.setPeso(pesoNovo);
+            aux.setConteudo(conteudoNovo);
+        }else {
+            System.out.println("Elemento não existe na lista");
+        }
     }
 
     @Override
@@ -93,11 +103,6 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         //João
     }
 
-
-    @Override
-    public void exibir() {
-        //Já existem com outro nome
-    }
 
     @Override
     public No obterPrimeiroElemento() {
@@ -113,7 +118,9 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     //Metodos Normais
 
-    public void mostrarPilha (){
+
+    @Override
+    public void exibir (){
         NoInteger aux = this.primeiro;
 
         if (estaVazia()) {
@@ -129,7 +136,25 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         }
     }
 
-    public void adicionarPilha (Integer conteudo, Integer peso){
+    public NoInteger puxarNo (Integer conteudo, Integer peso){
+        NoInteger aux = this.primeiro;
+
+        if (estaVazia()){
+            return null;
+        } else {
+            do {
+                if (aux.getConteudo()==conteudo&&aux.getPeso()==peso){
+                    return aux;
+                }
+                aux= aux.getProximo();
+            }while (aux!=ultimo.getProximo());
+            return null;
+        }
+
+    }
+
+    @Override
+    public void inserirElemento(Integer conteudo, Integer peso){
         NoInteger novoNo = new NoInteger();
         novoNo.setConteudo(conteudo);
         novoNo.setPeso(peso);

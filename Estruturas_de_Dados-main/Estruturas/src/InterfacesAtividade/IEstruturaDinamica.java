@@ -1,11 +1,12 @@
 package InterfacesAtividade;
 
+import Dinamicas.PilhaDinamicaInteger;
 import Nos.No;
 
 public interface IEstruturaDinamica {
 
-    void inserirElemento(Object elemento);
-    void inserirSequencia(Object elementos);
+    void inserirElemento(Integer conteudo,Integer peso);
+    void inserirSequencia(PilhaDinamicaInteger pilhaDinamicaInteger2);
     boolean removerElemento(Object elemento);
     void removerSequencia(Object elementos);
     void removerTodasOcorrencias(Object elemento);
@@ -15,7 +16,7 @@ public interface IEstruturaDinamica {
     void ordenarCrescente();
     void ordenarDecrescente();
     int quantidadeElementos();
-    void editarElemento(Object elementoAntigo, Object elementoNovo);
+    void editarElemento(Integer conteudoAntigo, Integer pesoAntigo,Integer conteudoNovo, Integer pesoNovo);
     void limpar();
     void exibir();
     No obterPrimeiroElemento();

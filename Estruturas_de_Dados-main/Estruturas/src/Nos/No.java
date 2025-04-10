@@ -1,6 +1,8 @@
 package Nos;
 
-public abstract class No {
+import InterfacesAtividade.INo;
+
+public abstract class No  {
     private Integer peso;
     private NoInteger proximo;
     private NoInteger anterior;
