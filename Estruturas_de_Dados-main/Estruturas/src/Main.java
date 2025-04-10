@@ -1,4 +1,4 @@
-import Dinamicas.PhilaDinamicaInteger;
+import Dinamicas.PilhaDinamicaInteger;
 
 
 import java.util.Scanner;
@@ -6,22 +6,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int escolha, auxiliar, auxiliar2;
-        PhilaDinamicaInteger philaDinamicaInteger = new PhilaDinamicaInteger();
+        PilhaDinamicaInteger pilhaDinamicaInteger = new PilhaDinamicaInteger();
         do {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair\n1_Ver lista\n2_Adicionar valor" +
                     "\n3_Remover valor\n4_....");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
-                    philaDinamicaInteger.mostrarPhila();
+                    pilhaDinamicaInteger.mostrarPilha();
                     break;
                 case 2:
 
                     // Perguntar valor e peso. ( caso precise informar precisa de peso?
-                    //philaDinamicaInteger.adicionarPhila();
+                    //pilhaDinamicaInteger.adicionarPhila();
                     break;
                 case 3:
-                    philaDinamicaInteger.removerPhila();
+                    pilhaDinamicaInteger.removerPilha();
                     break;
                 case 4:
                 break;

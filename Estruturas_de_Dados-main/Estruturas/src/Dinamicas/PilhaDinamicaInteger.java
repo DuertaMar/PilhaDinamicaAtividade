@@ -4,7 +4,7 @@ import InterfacesAtividade.IEstruturaDinamica;
 import Nos.No;
 import Nos.NoInteger;
 
-public class PhilaDinamicaInteger implements IEstruturaDinamica {
+public class PilhaDinamicaInteger implements IEstruturaDinamica {
     private NoInteger  primeiro;
     private NoInteger ultimo;
 
@@ -53,7 +53,7 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
     public boolean buscarElemento(Integer conteudo, Integer peso) {
         NoInteger aux = this.primeiro;
 
-        if (vazia()){
+        if (estaVazia()){
             return false;
         } else {
             do {
@@ -113,11 +113,11 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
 
     //Metodos Normais
 
-    public void mostrarPhila (){
+    public void mostrarPilha (){
         NoInteger aux = this.primeiro;
 
-        if (vazia()) {
-            System.out.println("A Pilha está vazia");
+        if (estaVazia()) {
+            System.out.println("A Pilha está estaVazia");
         }
         else {
             System.out.println("Phila:");
@@ -129,11 +129,11 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
         }
     }
 
-    public void adicionarPhila (Integer conteudo, Integer peso){
+    public void adicionarPilha (Integer conteudo, Integer peso){
         NoInteger novoNo = new NoInteger();
         novoNo.setConteudo(conteudo);
         novoNo.setPeso(peso);
-        if(vazia()) {
+        if(estaVazia()) {
             this.primeiro = novoNo;
             this.ultimo = this.primeiro;
         } else {
@@ -143,10 +143,10 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
         }
     }
 
-    public void removerPhila () {
+    public void removerPilha () {
         NoInteger aux = ultimo;
         NoInteger aux2;
-        if (!vazia()) {
+        if (!estaVazia()) {
 
             if (this.ultimo == this.primeiro) {
                 this.primeiro = null;
@@ -169,7 +169,7 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
                 this.ultimo.setProximo(null);
             }
         } else {
-            System.out.println("A pilha está vazia");
+            System.out.println("A pilha está estaVazia");
         }
     }
 
@@ -177,7 +177,7 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
 
 
     // Metodos segundarios
-    public boolean vazia () {
+    public boolean estaVazia () {
         if (this.primeiro == null) {
             return true;
         }else {return false;}
@@ -186,7 +186,6 @@ public class PhilaDinamicaInteger implements IEstruturaDinamica {
     public void ultimoElemento (){
         System.out.println("O ultimo da fila é "+ultimo.getConteudo()+" com peso de"+ultimo.getPeso());
     }
-
 
 
     //Get and Set
