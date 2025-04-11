@@ -25,17 +25,22 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         }
     }
 
+    @Override
+    public void limpar() {
+        //João
+        this.primeiro = null;
+        this.ultimo = null;
+    }
 
     @Override
     public boolean removerElemento(Object elemento) {
-        //Existe algo simmilar, mas é a remoção considerando a regra da estrutura
-        //João
+        // João
         if (estaVazia()) {
             return false;
         }
 
         Integer valor = (Integer) elemento;
-        NoInteger aux = primeiro;
+        NoInteger aux = ultimo; 
 
         while (aux != null) {
             if (aux.getConteudo().equals(valor)) {
@@ -53,9 +58,19 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
                 return true;
             }
-            aux = aux.getProximo();
+            aux = aux.getAnterior();
         }
         return false;
+    }
+
+    @Override
+    public void removerTodasOcorrencias(Object elemento) {
+        //João
+        int removidos = 0;
+        while (removerElemento(elemento)) {
+            removidos++;
+        }
+        System.out.println(removidos + " ocorrência(s) do elemento [" + elemento + "] removida(s).");
     }
 
     @Override
@@ -71,23 +86,19 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         }
         System.out.println("Sequência removida da pilha.");
     }
+    //pilha = {1, 3, 2, 5, 4, 13}
+    //elementos = {3, 5, 13}
 
-    @Override
-    public void removerTodasOcorrencias(Object elemento) {
-        //João
-        int removidos = 0;
-        while (removerElemento(elemento)) {
-            removidos++;
-        }
-        System.out.println(removidos + " ocorrência(s) do elemento [" + elemento + "] removida(s).");
-    }
+    //i=0 -> removerTodasOcorrencias(3)
+    //pilha: {1, 2, 5, 4, 13}
 
-    @Override
-    public void limpar() {
-        //João
-        this.primeiro = null;
-        this.ultimo = null;
-    }
+    //i=1 -> removerTodasOcorrencias(5)
+    //pilha: {1, 2, 4, 13}
+
+    //i=2 -> removerTodasOcorrencias(13)
+    //pilha: {1, 2, 4}
+
+
 
     @Override
     public boolean estaCheia() {
@@ -170,7 +181,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
             System.out.println("A Pilha está estaVazia");
         }
         else {
-            System.out.println("Phila:");
+            System.out.println("Pilha:");
             do {
                 System.out.println("Conteudo[" + aux.getConteudo() + "] " +  "Peso["+aux.getPeso()+"]");
                 aux = aux.getProximo();

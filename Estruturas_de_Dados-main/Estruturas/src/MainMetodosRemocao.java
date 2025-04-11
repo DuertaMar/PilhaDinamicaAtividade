@@ -1,5 +1,8 @@
 import Dinamicas.PilhaDinamicaInteger;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainMetodosRemocao {
     public static void main(String[] args) {
         PilhaDinamicaInteger pilha = new PilhaDinamicaInteger();
@@ -15,6 +18,8 @@ public class MainMetodosRemocao {
         pilha.inserirElemento(56, 0);
         pilha.inserirElemento(5, 0);
         pilha.exibir();
+
+        //pilha.limpar();
 
         //pilha.removerElemento(5);
 
