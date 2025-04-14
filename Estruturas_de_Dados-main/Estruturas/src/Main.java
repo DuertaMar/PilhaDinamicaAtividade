@@ -14,11 +14,11 @@ public class Main {
         do {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
                     "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia  7_Ver lista (Crescente)  " +
-                    "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  10_Limpar  11_Remover elemento");
+                    "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  " +
+                    "10 - Remover Elemento    11 - Remover Todas as Ocorrências    12 - Remover Sequência    13 - Limpar");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
-
                     pilhaDinamicaInteger.exibir();
                     break;
                 case 2:
@@ -97,14 +97,22 @@ public class Main {
                     System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
                     break;
                 case 10:
-                    pilhaDinamicaInteger.limpar();
-                    break;
-                case 11:
-                    System.out.println("Valor que gostaria de remover: ");
-                    auxiliar=perguntarInt();
+                    System.out.println("Digite o valor que deseja remover:");
+                    auxiliar = perguntarInt();
                     pilhaDinamicaInteger.removerElemento(auxiliar);
                     break;
-
+                case 11:
+                    System.out.println("Digite o valor a ser removido todas as ocorrências:");
+                    auxiliar = perguntarInt();
+                    pilhaDinamicaInteger.removerTodasOcorrencias(auxiliar);
+                    break;
+                case 12:
+                    pilhaDinamicaInteger.removerSequencia(coletarSequenciaRemocao());
+                    break;
+                case 13:
+                    pilhaDinamicaInteger.limpar();
+                    System.out.println("A pilha foi esvaziada.");
+                    break;
             }
 
         } while (escolha!=0);
