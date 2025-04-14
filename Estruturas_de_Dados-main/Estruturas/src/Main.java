@@ -100,6 +100,7 @@ public class Main {
                     System.out.println("Digite o valor que deseja remover:");
                     auxiliar = perguntarInt();
                     pilhaDinamicaInteger.removerElemento(auxiliar);
+                    System.out.println("Elemento "+auxiliar+" removido.");
                     break;
                 case 11:
                     System.out.println("Digite o valor a ser removido todas as ocorrências:");
