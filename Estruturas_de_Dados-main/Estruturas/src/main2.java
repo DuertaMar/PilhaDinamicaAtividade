@@ -9,6 +9,10 @@ public class main2 {
         pilhaDinamicaInteger.inserirElemento(20,0);
         pilhaDinamicaInteger.inserirElemento(30,1);
         pilhaDinamicaInteger.exibir();
+        pilhaDinamicaInteger.ordenarCrescente();
+        pilhaDinamicaInteger.ordenarDecrescente();
+        System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
+        pilhaDinamicaInteger.exibir();
         System.out.println(pilhaDinamicaInteger.buscarElemento(30,1));
 
         pilhaDinamicaInteger.editarElemento(30,1,15,0);
