@@ -11,13 +11,12 @@ public class Main {
         PilhaDinamicaInteger aux = new PilhaDinamicaInteger();
         do {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
-                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia\n");
+                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia  7_Ver lista (Crescente)  " +
+                    "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  10_Limpar  11_Remover elemento");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
-                    pilhaDinamicaInteger.ordenarCrescente();
-                    pilhaDinamicaInteger.ordenarDecrescente();
-                    System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
+
                     pilhaDinamicaInteger.exibir();
                     break;
                 case 2:
@@ -86,7 +85,26 @@ public class Main {
                     System.out.println("Lista auxiliar inserida na lista principal!");
                     pilhaDinamicaInteger.inserirSequencia(aux);
                     break;
+                case 7:
+                    pilhaDinamicaInteger.ordenarCrescente();
+                    break;
+                case 8:
+                    pilhaDinamicaInteger.ordenarDecrescente();
+                    break;
+                case 9:
+                    System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
+                    break;
+                case 10:
+                    pilhaDinamicaInteger.limpar();
+                    break;
+                case 11:
+                    System.out.println("Valor que gostaria de remover: ");
+                    auxiliar=perguntarInt();
+                    pilhaDinamicaInteger.removerElemento(auxiliar);
+                    break;
+
             }
+
         } while (escolha!=0);
         System.out.println("Obrigado por usar.");
     }

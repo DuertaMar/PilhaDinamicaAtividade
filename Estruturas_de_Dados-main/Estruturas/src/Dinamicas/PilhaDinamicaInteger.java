@@ -221,8 +221,6 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
     }
 
     //Metodos Normais
-
-
     @Override
     public void exibir (){
         NoInteger aux = this.primeiro;
@@ -276,7 +274,6 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         NoInteger aux = ultimo;
         NoInteger aux2;
         if (!estaVazia()) {
-
             if (this.ultimo == this.primeiro) {
                 this.primeiro = null;
             } else if (this.ultimo.getAnterior().getPeso() > 0) {
