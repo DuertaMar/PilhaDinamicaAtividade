@@ -14,7 +14,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     @Override
     public void inserirSequencia(PilhaDinamicaInteger pilhaDinamicaInteger2) {
-        NoInteger aux=pilhaDinamicaInteger2.getPrimeiro();
+        NoInteger aux=pilhaDinamicaInteger2.obterPrimeiroElemento();
         if (pilhaDinamicaInteger2.estaVazia()){
             System.out.println("Pilha vazia");
         }else {
@@ -159,15 +159,13 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
     }
 
     @Override
-    public No obterPrimeiroElemento() {
-        return null;
-        //Já existem com outro nome
+    public NoInteger obterPrimeiroElemento() {
+        return primeiro;
     }
 
     @Override
     public No obterUltimoElemento() {
-        return null;
-        //Já existem com outro nome
+        return ultimo;
     }
 
     //Metodos Normais
@@ -178,7 +176,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         NoInteger aux = this.primeiro;
 
         if (estaVazia()) {
-            System.out.println("A Pilha está estaVazia");
+            System.out.println("A Pilha está vazia");
         }
         else {
             System.out.println("Pilha:");
@@ -269,17 +267,12 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     //Get and Set
 
-    public NoInteger getPrimeiro() {
-        return primeiro;
-    }
 
     public void setPrimeiro(NoInteger primeiro) {
         this.primeiro = primeiro;
     }
 
-    public NoInteger getUltimo() {
-        return ultimo;
-    }
+
 
     public void setUltimo(NoInteger ultimo) {
         this.ultimo = ultimo;
