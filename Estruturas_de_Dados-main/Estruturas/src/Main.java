@@ -1,6 +1,8 @@
 import Dinamicas.PilhaDinamicaInteger;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +13,8 @@ public class Main {
         PilhaDinamicaInteger aux = new PilhaDinamicaInteger();
         do {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
-                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia\n");
+                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia\n"+
+                    "\n7 - Remover Elemento    8 - Remover todas as ocorrências    9 - Remover sequência    10 - Limpar");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
@@ -86,6 +89,23 @@ public class Main {
                     System.out.println("Lista auxiliar inserida na lista principal!");
                     pilhaDinamicaInteger.inserirSequencia(aux);
                     break;
+                case 7:
+                    System.out.println("Digite o valor que deseja remover:");
+                    auxiliar = perguntarInt();
+                    pilhaDinamicaInteger.removerElemento(auxiliar);
+                    break;
+                case 8:
+                    System.out.println("Digite o valor a ser removido todas as ocorrências:");
+                    auxiliar = perguntarInt();
+                    pilhaDinamicaInteger.removerTodasOcorrencias(auxiliar);
+                    break;
+                case 9:
+                    pilhaDinamicaInteger.removerSequencia(coletarSequenciaRemocao());
+                    break;
+                case 10:
+                    pilhaDinamicaInteger.limpar();
+                    System.out.println("A pilha foi esvaziada.");
+                    break;
             }
         } while (escolha!=0);
         System.out.println("Obrigado por usar.");
@@ -106,5 +126,28 @@ public class Main {
             peso= perguntarInt();
         } while (peso!=0&&peso!=1);
         return peso;
+    }
+
+
+//os comentários referem-se a mudanças necessárias para o uso da estrutura de pilha na criação da lista com elementos
+//private static PilhaDinamicaInteger coletarSequenciaRemocao()
+    private static List<Integer> coletarSequenciaRemocao() {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> sequenciaRemocao = new ArrayList<>();
+        //PilhaDinamicaInteger sequenciaRemocao = new PilhaDinamicaInteger();
+        int valor, escolha;
+        do {
+            do  {
+                System.out.println("Digite 1 para adicionar um valor na sequência ou 0 para finalizar: ");
+                escolha = scanner.nextInt();
+            } while((escolha != 1 && escolha != 0));
+            if (escolha == 0)
+                break;
+            System.out.println("Digite o valor a ser removido:");
+            valor = scanner.nextInt();
+            sequenciaRemocao.add(valor);
+            //sequenciaRemocao.inserirElemento(valor, 0);
+        } while (escolha != 0);
+        return sequenciaRemocao;
     }
  }

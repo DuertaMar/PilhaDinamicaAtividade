@@ -27,14 +27,14 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     @Override
     public void limpar() {
-        //João
+        //João Gabriel
         this.primeiro = null;
         this.ultimo = null;
     }
 
     @Override
     public boolean removerElemento(Object elemento) {
-        // João
+        // João Gabriel
         if (estaVazia()) {
             return false;
         }
@@ -65,7 +65,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     @Override
     public void removerTodasOcorrencias(Object elemento) {
-        //João
+        //João Gabriel
         int removidos = 0;
         while (removerElemento(elemento)) {
             removidos++;
@@ -75,7 +75,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     @Override
     public void removerSequencia(Object elementos) {
-        //João
+        //João Gabriel
         if (estaVazia()) {
             System.out.println("A pilha está vazia. Nada a remover.");
             return;
@@ -84,6 +84,20 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         for (int i = 0; i < lista.size(); i++) {
             removerTodasOcorrencias(lista.get(i));
         }
+
+        /*
+         * Esses comentários, juntamente com os do método coletarSequenciaRemocao(),
+         * correspondem ao uso da própria estrutura da pilha
+         * (em vez de usar List<>) para criação de uma lista contendo
+         * os elementos a serem removidos.
+         */
+//        PilhaDinamicaInteger lista = (PilhaDinamicaInteger) elementos;
+//        NoInteger aux = ((PilhaDinamicaInteger) elementos).primeiro;
+//        while(aux != null) {
+//            removerTodasOcorrencias(aux.getConteudo());
+//            aux = aux.getProximo();
+//        }
+
         System.out.println("Sequência removida da pilha.");
     }
     //pilha = {1, 3, 2, 5, 4, 13}
