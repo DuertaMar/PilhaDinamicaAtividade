@@ -12,11 +12,11 @@ public class Main {
         PilhaDinamicaInteger pilhaDinamicaInteger = new PilhaDinamicaInteger();
         PilhaDinamicaInteger aux = new PilhaDinamicaInteger();
         do {
-            System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
-                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia  7_Ver lista (Crescente)  " +
-                    "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  " +
-                    "10 - Remover Elemento    11 - Remover Todas as Ocorrências    12 - Remover Sequência    13 - Limpar" +
-                    "\n14_Ultimo elemento da pilha  \\n15_Exibir conteudo");
+            System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0 - Sair   1 - Ver lista   2 - Adicionar valor" +
+                    "\n3 - Remover valor(modo Pilha)    4 - Buscar valor    5 - Editar valor\n6 - Adicionar sequencia   7 - Ver lista (Crescente)   " +
+                    "8 - Ver lista (Decrescente)  \n9 - Quantidade de elementos na lista    " +
+                    "10 - Remover Elemento      11 - Remover Todas as Ocorrências\n12 - Remover Sequência       13 - Limpar" +
+                    "\n14 - Ultimo elemento da pilha    15 - Exibir conteudo");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
