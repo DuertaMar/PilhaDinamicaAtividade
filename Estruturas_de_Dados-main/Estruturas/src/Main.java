@@ -13,14 +13,12 @@ public class Main {
         PilhaDinamicaInteger aux = new PilhaDinamicaInteger();
         do {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
-                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia\n"+
-                    "\n7 - Remover Elemento    8 - Remover todas as ocorrências    9 - Remover sequência    10 - Limpar");
+                    "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia  7_Ver lista (Crescente)  " +
+                    "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  10_Limpar  11_Remover elemento");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
-                    pilhaDinamicaInteger.ordenarCrescente();
-                    pilhaDinamicaInteger.ordenarDecrescente();
-                    System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
+
                     pilhaDinamicaInteger.exibir();
                     break;
                 case 2:
@@ -90,23 +88,25 @@ public class Main {
                     pilhaDinamicaInteger.inserirSequencia(aux);
                     break;
                 case 7:
-                    System.out.println("Digite o valor que deseja remover:");
-                    auxiliar = perguntarInt();
-                    pilhaDinamicaInteger.removerElemento(auxiliar);
+                    pilhaDinamicaInteger.ordenarCrescente();
                     break;
                 case 8:
-                    System.out.println("Digite o valor a ser removido todas as ocorrências:");
-                    auxiliar = perguntarInt();
-                    pilhaDinamicaInteger.removerTodasOcorrencias(auxiliar);
+                    pilhaDinamicaInteger.ordenarDecrescente();
                     break;
                 case 9:
-                    pilhaDinamicaInteger.removerSequencia(coletarSequenciaRemocao());
+                    System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
                     break;
                 case 10:
                     pilhaDinamicaInteger.limpar();
-                    System.out.println("A pilha foi esvaziada.");
                     break;
+                case 11:
+                    System.out.println("Valor que gostaria de remover: ");
+                    auxiliar=perguntarInt();
+                    pilhaDinamicaInteger.removerElemento(auxiliar);
+                    break;
+
             }
+
         } while (escolha!=0);
         System.out.println("Obrigado por usar.");
     }
