@@ -23,7 +23,7 @@ public class Main {
                     pilhaDinamicaInteger.exibir();
                     break;
                 case 2:
-                    System.out.println("Escolha o valor que está querendo adicionar a lista: ");
+                    System.out.println("Escolha o valor que está querendo adicionar a phila: ");
                     auxiliar = perguntarInt();
                     auxiliar2 = perguntarPeso();
                     pilhaDinamicaInteger.inserirElemento(auxiliar,auxiliar2);
@@ -32,13 +32,13 @@ public class Main {
                     pilhaDinamicaInteger.removerPilha();
                     break;
                 case 4:
-                    System.out.println("Escolha o valor que está procurando na lista: ");
+                    System.out.println("Escolha o valor que está procurando na pilha: ");
                     auxiliar = perguntarInt();
                     auxiliar2 = perguntarPeso();
                     if (pilhaDinamicaInteger.buscarElemento(auxiliar,auxiliar2)){
                         System.out.println("Valor encontrado");
                     } else {
-                        System.out.println("Valor não existe na lista");
+                        System.out.println("Valor não existe na phila");
                     }
                 break;
                 case 5:
@@ -51,7 +51,7 @@ public class Main {
                     pilhaDinamicaInteger.editarElemento(auxiliar,auxiliar2,auxiliar3,auxiliar4);
                     break;
                 case 6:
-                    System.out.println("Iniciando a lista auxiliar.\n Inclua o valor.");
+                    System.out.println("Iniciando a Pilha auxiliar.\n Inclua o valor.");
                     auxiliar = perguntarInt();
                     auxiliar2 = perguntarPeso();
                     aux.inserirElemento(auxiliar,auxiliar2);
@@ -60,7 +60,7 @@ public class Main {
                         System.out.println("Gostaria de adicionar mais elementos? \n0_Não\n1_Sim");
                         sequencia = perguntarInt();
                         if (sequencia==1){
-                            System.out.println("Escolha o valor que está querendo adicionar a lista auxiliar: ");
+                            System.out.println("Escolha o valor que está querendo adicionar a phila auxiliar: ");
                             auxiliar = perguntarInt();
                             auxiliar2 = perguntarPeso();
                             aux.inserirElemento(auxiliar,auxiliar2);
@@ -77,7 +77,7 @@ public class Main {
                         aux.exibir();
                     } while (sequencia!=0);
 
-                    System.out.println("Lista auxiliar inserida na lista principal!");
+                    System.out.println("Pilha auxiliar inserida na phila principal!");
                     pilhaDinamicaInteger.inserirSequencia(aux);
                     break;
                 case 7:
