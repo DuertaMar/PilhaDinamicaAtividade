@@ -12,6 +12,11 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     //Métodos da interface
 
+
+    /*
+    Este eu adaptei para receber apenas a pilha, pois estamos pilha e como possui a questão de pesos
+    é complicado utilizar outro tipo de estrutura considerando o Nó.
+     */
     @Override
     public void inserirSequencia(PilhaDinamicaInteger pilhaDinamicaInteger2) {
         NoInteger aux=pilhaDinamicaInteger2.obterPrimeiroElemento();
@@ -234,7 +239,6 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
         return ultimo;
     }
 
-    //Metodos Normais
     @Override
     public void exibir (){
         NoInteger aux = this.primeiro;
@@ -251,6 +255,23 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
         }
     }
+
+    @Override
+    public void inserirElemento(Integer conteudo, Integer peso){
+        NoInteger novoNo = new NoInteger();
+        novoNo.setConteudo(conteudo);
+        novoNo.setPeso(peso);
+        if(estaVazia()) {
+            this.primeiro = novoNo;
+            this.ultimo = this.primeiro;
+        } else {
+            this.ultimo.setProximo(novoNo);
+            novoNo.setAnterior(this.ultimo);
+            this.ultimo=novoNo;
+        }
+    }
+
+    //Metodos Normais
 
     public NoInteger puxarNo (Integer conteudo, Integer peso){
         NoInteger aux = this.primeiro;
@@ -269,20 +290,6 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     }
 
-    @Override
-    public void inserirElemento(Integer conteudo, Integer peso){
-        NoInteger novoNo = new NoInteger();
-        novoNo.setConteudo(conteudo);
-        novoNo.setPeso(peso);
-        if(estaVazia()) {
-            this.primeiro = novoNo;
-            this.ultimo = this.primeiro;
-        } else {
-            this.ultimo.setProximo(novoNo);
-            novoNo.setAnterior(this.ultimo);
-            this.ultimo=novoNo;
-        }
-    }
 
     public void removerPilha () {
         NoInteger aux = ultimo;

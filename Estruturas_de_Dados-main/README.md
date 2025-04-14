@@ -1,14 +1,9 @@
-
-
 Pilha Dinamica Atividade
 
 Para o professor Ricardo:
 A pilha está implementando a interface
 O nó não precisa implementar, pois internamente já está implementado
 (Está usando o conceito de herança), se implementar o INo ficará duplicado.
-
-
-
 
 ---
 O que cada um da equipe ficará responsável e as contribuições.
@@ -22,6 +17,6 @@ Mas vai ser ordenado crescente e decrescente, quantidade elementos  em métodos 
 Os método removerElemento, removerTodasOcorrendias, removerSequencia, limpar
 
 (Gabriel)
-Preparar a Pilha dinamica, ajustar a main, os métodos de inserirSequencia, inserirElemento
+Preparar a Pilha dinamica, ajustar a main, os métodos de inserirSequencia (Eu adaptei para receber apenas a pilha explicado no coméntario acima do método), inserirElemento
 
 

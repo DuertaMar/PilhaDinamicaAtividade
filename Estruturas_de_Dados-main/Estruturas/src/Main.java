@@ -50,14 +50,6 @@ public class Main {
                     pilhaDinamicaInteger.editarElemento(auxiliar,auxiliar2,auxiliar3,auxiliar4);
                     break;
                 case 6:
-
-                    //estou fazendo ela receber a mesma estrutura mas não sei se é por causa disso que está dando está mensagem aqui..
-                    // talvez não possa ser a mesma estrutura? dps preciso que verifique se está correto.
-                    // mensagem é esta
-                    //WARNING: A restricted method in java.lang.System has been called
-                    //WARNING: java.lang.System::load has been called by com.intellij.rt.execution.application.AppMainV2 in an unnamed module (file:/C:/Program%20Files/JetBrains/IntelliJ%20IDEA%20Community%20Edition%202024.1.1/lib/idea_rt.jar)
-                    //WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
-                    //WARNING: Restricted methods will be blocked in a future release unless native access is enabled
                     System.out.println("Iniciando a lista auxiliar.\n Inclua o valor.");
                     auxiliar = perguntarInt();
                     auxiliar2 = perguntarPeso();
