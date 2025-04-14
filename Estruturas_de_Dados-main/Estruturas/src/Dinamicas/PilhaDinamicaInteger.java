@@ -333,7 +333,9 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
     }
 
     public void ultimoElemento (){
-        System.out.println("O ultimo da fila é "+ultimo.getConteudo()+" com peso de"+ultimo.getPeso());
+        if(!estaVazia()) {
+            System.out.println("O ultimo da fila é " + ultimo.getConteudo() + " com peso de" + ultimo.getPeso());
+        }
     }
 
     public void exibirConteudo (){
