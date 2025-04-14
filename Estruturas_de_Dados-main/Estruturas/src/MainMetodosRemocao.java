@@ -25,8 +25,14 @@ public class MainMetodosRemocao {
 
         //pilha.removerTodasOcorrencias(5);
 
-        //List<Integer> elementosLista = Arrays.asList(4, 5, 9);
-        //pilha.removerSequencia(elementosLista);
+//        PilhaDinamicaInteger pilha2 = new PilhaDinamicaInteger();
+//        pilha2.inserirElemento(17, 0);
+//        pilha2.inserirElemento(22, 0);
+//        pilha2.inserirElemento(28, 0);
+//        pilha.inserirSequencia(pilha2);
+
+        List<Integer> elementosLista = Arrays.asList(4, 5, 9);
+        pilha.removerSequencia(elementosLista);
 
         pilha.exibir();
     }
