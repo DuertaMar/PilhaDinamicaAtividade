@@ -175,6 +175,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
             aux = aux.getProximo();
         }
         System.out.println("Pilha ordenada em ordem crescente.");
+        exibir();
     }
 
     @Override
@@ -203,6 +204,7 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
             aux = aux.getProximo();
         }  
         System.out.println("Pilha ordenada em ordem decrescente.");
+        exibir();
     }
 
     @Override
@@ -332,6 +334,22 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     public void ultimoElemento (){
         System.out.println("O ultimo da fila é "+ultimo.getConteudo()+" com peso de"+ultimo.getPeso());
+    }
+
+    public void exibirConteudo (){
+        NoInteger aux = this.primeiro;
+
+        if (estaVazia()) {
+            System.out.println("A Pilha está vazia");
+        }
+        else {
+            System.out.println("Pilha:");
+            do {
+                System.out.println("Conteudo[" + aux.getConteudo() + "]");
+                aux = aux.getProximo();
+            } while (aux!=ultimo.getProximo());
+
+        }
     }
 
 

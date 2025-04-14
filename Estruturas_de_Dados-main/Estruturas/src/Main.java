@@ -15,7 +15,8 @@ public class Main {
             System.out.println("Escolha o método a ser usado na Pilha Dinamica.\n0_Sair  1_Ver lista  2_Adicionar valor" +
                     "\n3_Remover valor(modo Pilha)  4_Buscar valor  5_Editar valor\n6_Adicionar sequencia  7_Ver lista (Crescente)  " +
                     "8_Ver lista (Decrescente)  \n9_Quantidade de elementos na lista  " +
-                    "10 - Remover Elemento    11 - Remover Todas as Ocorrências    12 - Remover Sequência    13 - Limpar");
+                    "10 - Remover Elemento    11 - Remover Todas as Ocorrências    12 - Remover Sequência    13 - Limpar" +
+                    "\n14_Ultimo elemento da pilha  \\n15_Exibir conteudo");
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
@@ -105,6 +106,12 @@ public class Main {
                 case 13:
                     pilhaDinamicaInteger.limpar();
                     System.out.println("A pilha foi esvaziada.");
+                    break;
+                case 14:
+                    pilhaDinamicaInteger.ultimoElemento();
+                    break;
+                case 15:
+                    pilhaDinamicaInteger.exibirConteudo();
                     break;
             }
 
