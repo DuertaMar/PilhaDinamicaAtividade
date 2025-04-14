@@ -132,18 +132,70 @@ public class PilhaDinamicaInteger implements IEstruturaDinamica {
 
     @Override
     public void ordenarCrescente() {
-        //Yuri
+        // Yuri
+        if (estaVazia()) {
+            return;
+        }
+        NoInteger aux = primeiro.getProximo();
+        while (aux != null) {
+            int conteudoAux = aux.getConteudo();
+            int pesoAux = aux.getPeso();
+            NoInteger anterior = aux.getAnterior();
+            while (anterior != null && anterior.getConteudo() > conteudoAux) {
+                anterior.getProximo().setConteudo(anterior.getConteudo());
+                anterior.getProximo().setPeso(anterior.getPeso());
+                anterior = anterior.getAnterior();
+            }
+            if (anterior == null) {
+                primeiro.setConteudo(conteudoAux);
+                primeiro.setPeso(pesoAux);
+            } else {
+                anterior.getProximo().setConteudo(conteudoAux);
+                anterior.getProximo().setPeso(pesoAux);
+            }
+            aux = aux.getProximo();
+        }
+        System.out.println("Pilha ordenada em ordem crescente.");
     }
 
     @Override
     public void ordenarDecrescente() {
         //Yuri
+        if (estaVazia()) {
+            return;
+        }
+        NoInteger aux = primeiro.getProximo();
+        while (aux != null) {
+            int conteudoAux = aux.getConteudo();
+            int pesoAux = aux.getPeso();
+            NoInteger anterior = aux.getAnterior();
+            while (anterior != null && anterior.getConteudo() < conteudoAux) {
+                anterior.getProximo().setConteudo(anterior.getConteudo());
+                anterior.getProximo().setPeso(anterior.getPeso());
+                anterior = anterior.getAnterior();
+            }
+            if (anterior == null) {
+                primeiro.setConteudo(conteudoAux);
+                primeiro.setPeso(pesoAux);
+            } else {
+                anterior.getProximo().setConteudo(conteudoAux);
+                anterior.getProximo().setPeso(pesoAux);
+            }
+            aux = aux.getProximo();
+        }  
+        System.out.println("Pilha ordenada em ordem decrescente.");
     }
 
     @Override
     public int quantidadeElementos() {
-        return 0;
-        //Yuri
+    //Yuri
+    int contador = 0;
+    NoInteger aux = primeiro;
+    while (aux != null) {
+        contador++;
+        aux = aux.getProximo();
+        }
+    return contador;
     }
 
     @Override
