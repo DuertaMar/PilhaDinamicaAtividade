@@ -15,6 +15,9 @@ public class Main {
             escolha = perguntarInt();
             switch (escolha) {
                 case 1:
+                    pilhaDinamicaInteger.ordenarCrescente();
+                    pilhaDinamicaInteger.ordenarDecrescente();
+                    System.out.println("Quantidade de elementos na pilha: "+pilhaDinamicaInteger.quantidadeElementos());
                     pilhaDinamicaInteger.exibir();
                     break;
                 case 2:
